@@ -26,6 +26,10 @@ public class Test {
         .buildClient();
         blobServiceClient.createContainer("mycontainer");
         BlockBlobClient blockBlobClient = blobServiceClient.getContainerClient("mycontainer").getBlockBlobClient("myblob");
+        String dataSample = "samples";
+        try (ByteArrayInputStream dataStream = new ByteArrayInputStream(dataSample.getBytes())) {
+            blockBlobClient.upload(dataStream, dataSample.length());
+        }
         try(ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             blockBlobClient.download(outputStream);
             System.out.println("Download completed.");
