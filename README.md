@@ -1,5 +1,5 @@
-# EventHubs-donet-bug-whenConsumerEvents
-The client created by using host, enventhubname and Credential doesn't work.Use ConnectString to  create EventhubAsyncClient works well. 
+# Storageblob-java-bug-whendownloadblob
+Failed to download a blob to output stream. 
 
 # Reproduce this issue
 - clone this repository using Git first.
